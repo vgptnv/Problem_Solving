@@ -4,12 +4,12 @@ import sys
 n = int(sys.stdin.readline())
 deq = []
 for _ in range(n):
-    inp = sys.stdin.readline()
+    inp = sys.stdin.readline().split()
     command = inp.split()[0]
     if command == 'push_back':
-        deq.append(int(inp.split()[-1]))
+        deq.append(int(inp[1]))
     elif command == 'push_front':
-        deq = [int(inp.split()[-1])] + deq
+        deq = [int(inp[1])] + deq
     elif command == 'pop_front':
         if len(deq) == 0 : print(-1)
         else: print(deq.pop(0))
